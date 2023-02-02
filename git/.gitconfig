@@ -1,0 +1,44 @@
+[color]
+        branch = auto
+        diff = auto
+        status = auto
+        ui = true
+
+[user]
+        name = Modestas Stankus
+        email = stankus.modestas@gmail.com
+
+[alias]
+        st = status
+        co = checkout
+        wc = whatchanged -p
+        wr = whatchanged -p --reverse
+        cm = commit --verbose
+	br = branch
+	am = am -s -p0
+	sh = show --submodule=diff
+	shs = show --stat
+        serve = daemon --reuseaddr --base-path=. --export-all ./.git
+	chp = cherry-pick -x -s
+	np = log origin/master..master
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+	lg = log --no-merges --pretty=format:'%h %ad | %s%d [%an]' --date=short
+	lgdiff = log --no-merges --pretty=format:'%s %d [%an]' --date=short
+	ignored = status --ignored
+	commited-ignored = !git ls-files -i --exclude-standard
+[push]
+	default = matching
+[merge]
+	tool = meld
+[diff]
+	tool = icdiff
+	#noprefix = true
+[difftool]
+	prompt = false
+[pager]
+	difftool = true
+[pull]
+	rebase = true
+[delta]
+	navigate = true
+	light = false
