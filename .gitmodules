@@ -1,6 +1,6 @@
 [submodule "antigen"]
 	path = antigen/.antigen/repos/antigen
 	url = https://github.com/zsh-users/antigen.git
-[submodule "tmux-tpm"]
-	path = tmux/.tmux/plugins/tmp
+[submodule "tmux-plugin-maneger-tpm"]
+	path = tmux/.tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
