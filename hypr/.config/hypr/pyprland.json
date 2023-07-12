@@ -1,0 +1,14 @@
+{
+  "pyprland": {
+    "plugins": [
+      "scratchpads"
+    ]
+  },
+  "scratchpads": {
+    "term": {
+      "command": "alacritty --class term-dropterm",
+      "animation": "fromTop",
+      "unfocus": "hide"
+    }
+  }
+}
