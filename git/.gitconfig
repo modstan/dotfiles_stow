@@ -28,10 +28,12 @@
 	commited-ignored = !git ls-files -i --exclude-standard
 [push]
 	default = matching
+	recurseSubmodules = on-demand
 [merge]
 	tool = meld
 [diff]
 	tool = icdiff
+	#submodule = diff
 	#noprefix = true
 [difftool]
 	prompt = false
@@ -42,3 +44,12 @@
 [delta]
 	navigate = true
 	light = false
+#[submodule]
+#	recurse = 1
+[status]
+	submodulesummary = 1
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
