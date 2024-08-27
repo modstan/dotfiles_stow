@@ -1,0 +1,44 @@
+alias ktag="make cscope tags -j99 ARCH=arm64"
+alias vi="nvim"
+alias low='ionice -n3 nice -n18'
+
+export LESS_TERMCAP_mb=$(printf "\e[1;37m")
+export LESS_TERMCAP_md=$(printf "\e[1;37m")
+export LESS_TERMCAP_me=$(printf "\e[0m")
+export LESS_TERMCAP_se=$(printf "\e[0m")
+export LESS_TERMCAP_so=$(printf "\e[1;47;30m")
+export LESS_TERMCAP_ue=$(printf "\e[0m")
+export LESS_TERMCAP_us=$(printf "\e[0;36m")
+
+#show .gitignored files
+alias gnore='git ls-files --others --exclude-from=.git/info/exclude'
+alias p='sshpass -p admin01 '
+alias g='git'
+alias orai='curl wttr.in/kaunas'
+alias cryptousbstart='sudo cryptsetup open /dev/sdf1 xxx && sudo mount /dev/mapper/xxx  /mnt/crypto'
+alias cryptousbstop='sudo umount /mnt/crypto && sudo cryptsetup close xxx'
+alias patch-test='patch -p0 --dry-run'
+alias patch-force='patch -p0 -f'
+alias gd='git diff'
+alias gb='git checkout $(git branch | fzf-tmux -d 15)'
+alias gf='git format-patch -1 '
+alias gs='git show '
+alias ga='git am -s -3 '
+alias codecheck='checkpatch.pl --no-tree --max-line-length=120 -f --terse --color=auto'
+alias ip='ip -c -br'
+alias wrt='docker run --rm -it -v $PWD:/home/builder/project -v ~/.gitconfig:/home/builder/.gitconfig qsdk-builder-v5 '
+alias c='console -M dm -p 3109 $(console -M dm -p 3109 -u | cut -d " " -f 2 | fzf)'
+alias c2='console -M aviete -p 3109 $(console -M aviete -p 3109 -u | cut -d " " -f 2 | fzf)'
+alias s='ssh $(cat /etc/hosts |egrep "192.168.1|10.34.24" | cut -f 2 | fzf)'
+alias b='uap-builder make $(make |grep lede1701 | fzf-tmux)'
+alias screencast='wf-recorder -g "$(slurp)" -c h264_vaapi -d /dev/dri/renderD128  -f screencasts/video.mkv'
+alias mohit-ac-pro='sshpass -p 13-ubntcorp-admin ssh  admin@10.30.21.51 -p 2023'
+alias mohit-sniffer='sshpass -p 13-ubntcorp-admin ssh  admin@10.30.21.51 -p 2024'
+alias mohit-u6-ext='sshpass -p 13-ubntcorp-admin ssh  admin@10.30.21.51 -p 2025'
+alias uidwifipass='nmcli c modify "UID Wi-Fi" 802-1x.password'
+alias dm-up='sudo wg-quick up dm'
+alias dm-down='sudo wg-quick down dm'
+alias namai-up='sudo wg-quick up namai'
+alias namai-down='sudo wg-quick down namai'
+alias darbas-up='sudo wg-quick up ui'
+alias darbas-down='sudo wg-quick down ui'

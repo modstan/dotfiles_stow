@@ -1,0 +1,41 @@
+_append_to_path() {
+        if [ -d $1 -a -z ${path[(r)$1]} ]; then
+                path=($1 $path);
+        fi
+}
+
+source /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh 
+
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
+#export FZF_DEFAULT_OPTS=' --color fg:242,bg:236,hl:65,fg+:15,bg+:239,hl+:108
+#                          --color info:108,prompt:109,spinner:108,pointer:168,marker:168'
+
+# fe [FUZZY PATTERN] - Open the selected file with the default editor
+#   - Bypass fuzzy finder if there's only one match (--select-1)
+#   - Exit if there's no match (--exit-0)
+fe() {
+	local files
+	IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
+	[[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
+}
+
+fcd() {
+	local dir
+	dir=$(find ${1:-.} -path '*/\.*' -prune \
+		-o -type d -print 2> /dev/null | fzf +m) &&
+		cd "$dir"
+}
+
+mini() {
+	ttys=$(ls -1 /dev/ttyUSB* | sed 's/\/dev\///')
+
+	usb=$(echo $ttys |fzf-tmux)
+	minicom -w -c on -D /dev/$usb  -C /tmp/log_for_$usb
+}
+
+git_diff() {
+	preview="git diff $@ --color=always -- {-1}"
+	vim $(git diff $@ --name-only | fzf -m --ansi --preview $preview)
+}
