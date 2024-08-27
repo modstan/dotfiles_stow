@@ -7,8 +7,19 @@
   "scratchpads": {
     "term": {
       "command": "alacritty --class term-dropterm",
-      "animation": "fromTop",
-      "unfocus": "hide"
+      "animation": "fromTop"
+    },
+    "console": {
+      "command": "alacritty --class term-console",
+      "animation": "fromBottom"
+    },
+    "namai": {
+      "command": "alacritty --class term-namai",
+      "animation": "fromTop"
+    },
+    "term2": {
+      "command": "alacritty --class term-t2",
+      "animation": "fromTop"
     }
   }
 }
