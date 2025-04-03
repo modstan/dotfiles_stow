@@ -1,0 +1,5 @@
+[anthropic]
+api_key = ""
+url = "https://api.anthropic.com/v1/messages"
+default_model = "claude-3-7-sonnet-20250219"
+version = "2023-06-01"
