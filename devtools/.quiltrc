@@ -1,0 +1,7 @@
+## Options passed to GNU diff when generating patches
+QUILT_DIFF_OPTS="--show-c-function"
+
+QUILT_COMMON_ARGS="--sort --no-index --no-timestamps -p ab -U 7"
+QUILT_DIFF_ARGS="--color=auto $QUILT_COMMON_ARGS"
+QUILT_PATCH_ARGS="--fuzz=1"
+QUILT_REFRESH_ARGS="$QUILT_COMMON_ARGS"

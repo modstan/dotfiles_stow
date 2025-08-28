@@ -9,7 +9,7 @@ fi
 source ~/dotfiles/antigen/.antigen/repos/antigen/bin/antigen.zsh
 
 # Ensure editor is set
-export EDITOR=vim
+export EDITOR=nvim
 [[ $TMUX = "" ]] && export TERM="xterm-256color" || export TERM="tmux-256color"
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/sbin/:$HOME/bin:/opt/android-sdk/platform-tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/.cargo/bin:$HOME/go/bin"
 #ntigen bundle jdavis/zsh-files
@@ -39,23 +39,21 @@ ab() { adb backup -f $1.bk $1 }
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
-[ ! -f ~/dotfiles/zsh/zsh_alias ] || source ~/dotfiles/zsh/zsh_alias
-[ ! -f ~/dotfiles/zsh/zsh_fzf ] || source ~/dotfiles/zsh/zsh_fzf
+[ ! -f ~/.zsh_alias ] || source ~/.zsh_alias
+[ ! -f ~/.zsh_fzf ] || source ~/.zsh_fzf
+[ ! -f ~/.zsh_api_keys ] || source ~/.zsh_api_keys
 #autosuggestion:
 [ ! -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ] || source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 #syntax highlighting
 [ ! -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] || source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
 #git extras
 [ ! -f /usr/share/doc/git-extras/git-extras-completion.zsh ] || source /usr/share/doc/git-extras/git-extras-completion.zsh
 
 # Run tmux automatically on zsh lunch
 #if [ "$TMUX" = "" ]; then tmux; fi
-
-#unifi signing process
-export AWS_FUNCTION="signer"
-export AWS_PROFILE="firmware-prod"
-export UBNT_BUILD_IN_PLACE=1
 
 if type rg &> /dev/null; then
 	export FZF_DEFAULT_COMMAND='rg --files'
