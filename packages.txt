@@ -1,0 +1,10 @@
+docker
+git
+git-lfs
+zsh
+zsh-autosuggestions
+zsh-syntax-highlighting
+tmux
+neovim
+stow
+
