@@ -37,7 +37,4 @@ opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
 
 -- turn off swapfile
-opt.swapfile = true
-
-opt.cindent = true
-opt.cinoptions = "(0"
+opt.swapfile = false
