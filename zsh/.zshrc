@@ -12,6 +12,7 @@ source ~/dotfiles/antigen/.antigen/repos/antigen/bin/antigen.zsh
 export EDITOR=nvim
 [[ $TMUX = "" ]] && export TERM="xterm-256color" || export TERM="tmux-256color"
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/sbin/:$HOME/bin:/opt/android-sdk/platform-tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/.cargo/bin:$HOME/go/bin"
+export PATH="$HOME/.local/bin:$PATH"
 #ntigen bundle jdavis/zsh-files
 antigen use oh-my-zsh
 
@@ -40,6 +41,7 @@ ab() { adb backup -f $1.bk $1 }
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 [ ! -f ~/.zsh_alias ] || source ~/.zsh_alias
+[ ! -f ~/.zsh_alias_work ] || source ~/.zsh_alias_work
 [ ! -f ~/.zsh_fzf ] || source ~/.zsh_fzf
 [ ! -f ~/.zsh_api_keys ] || source ~/.zsh_api_keys
 #autosuggestion:
