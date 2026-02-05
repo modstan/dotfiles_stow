@@ -1,0 +1,68 @@
+[pyprland]
+plugins = [
+  "scratchpads",
+  "lost_windows",
+  "monitors",
+  "toggle_dpms",
+  "magnify",
+  "expose",
+  "shift_monitors",
+  "workspaces_follow_focus",
+  "menubar",
+  "wallpapers",
+]
+
+#[monitors.placement]
+#"Acer".top_center_of = "Sony"
+
+#[workspaces_follow_focus]
+#max_workspaces = 9
+
+#[expose]
+#include_special = false
+
+[menubar]
+command = "ashell"
+#monitors = ["DP-1", "HDMI-1", "HDMI-1-A"]
+
+[wallpapers]
+#unique = true # set a different wallpaper for each screen
+path = "~/wallpaper/"
+#interval = 60 # change every hour
+extensions = ["jpg", "jpeg"]
+recurse = true
+## Using swww
+command = 'swww img --transition-type any "[file]"'
+clear_command = "swww clear"
+
+[scratchpads.term]
+animation = "fromTop"
+#command = "ghostty --class=term-dropterm"
+command = "alacritty --class term-dropterm"
+class = "term-dropterm"
+size = "90% 90%"
+
+[scratchpads.console]
+animation = "fromBottom"
+command = "alacritty --class term-console"
+class = "term-console"
+lazy = true
+size = "90% 90%"
+
+[scratchpads.namai]
+animation = "fromLeft"
+command = "alacritty --class term-namai"
+class = "term-namai"
+lazy = true
+size = "90% 90%"
+
+
+[scratchpads.term2]
+animation = "fromRight"
+command = "alacritty --class term-t2"
+class = "term-t2"
+lazy = true
+size = "90% 90%"
+#unfocus = "hide"
+
+

@@ -4,7 +4,7 @@ handle() {
   echo "|$@|" >> /tmp/soclistener.log
   case $1 in monitoradded*)
     ~/.config/hypr/bin/move-workspace.sh
-    killall -SIGUSR2 waybar 
+    #killall -SIGUSR2 waybar
   esac
 }
 
