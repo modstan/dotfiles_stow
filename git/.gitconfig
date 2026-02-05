@@ -7,6 +7,7 @@
 [user]
         name = Modestas Stankus
 	email = stankus.modestas@gmail.com
+
 [core]
 	sshCommand = ssh -i ~/.ssh/id_ed25519_personal
 
@@ -35,6 +36,10 @@
 	tool = meld
 [diff]
 	tool = icdiff
+	colorMoved = plain
+	algorithm = histogram
+	mnemonicPrefix = true
+	renames = true
 	#submodule = diff
 	#noprefix = true
 [difftool]
@@ -55,8 +60,10 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
 
 [includeIf "gitdir:~/projects/"]
 	path = ~/.gitconfig_work
-
-
