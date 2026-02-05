@@ -6,12 +6,14 @@
 
 [user]
         name = Modestas Stankus
-        email = stankus.modestas@gmail.com
+	email = stankus.modestas@gmail.com
+[core]
+	sshCommand = ssh -i ~/.ssh/id_ed25519_personal
 
 [alias]
         st = status
         co = checkout
-        wc = whatchanged -p
+        wc = whatchanged -p --i-still-use-this
         wr = whatchanged -p --reverse
         cm = commit --verbose
 	br = branch
@@ -53,3 +55,8 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+
+[includeIf "gitdir:~/projects/"]
+	path = ~/.gitconfig_work
+
+
