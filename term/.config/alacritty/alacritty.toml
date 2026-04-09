@@ -1,0 +1,25 @@
+[font]
+size = 15.0
+
+[font.bold]
+family = "JetBrains Mono"
+style = "Bold"
+
+[font.italic]
+family = "JetBrains Mono"
+style = "Italic"
+
+[font.normal]
+family = "JetBrains Mono"
+
+[window]
+decorations = "full"
+dynamic_title = true
+
+[terminal]
+osc52="CopyPaste"
+
+#[bell]
+#animation = "Linear"
+#duration = 0
+#command = { program = "sh", args = ["-c", "notify-send 'Claude Code' 'Needs your attention'"] }
